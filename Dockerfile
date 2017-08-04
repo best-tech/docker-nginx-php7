@@ -141,9 +141,10 @@ RUN set -x && \
 RUN set -x && \
     yum install -y \
     epel-release 
+    
 RUN wget https://centos7.iuscommunity.org/ius-release.rpm \
     && rpm -i ./ius-release.rpm 
-    # && rm ./ius-release.rpm \
+
 RUN set -x && \
     yum install -y \
     php71u \
