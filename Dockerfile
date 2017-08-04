@@ -18,7 +18,6 @@ RUN set -x && \
     make \
     openssh-clients \
     mc \
-    composser \
     cmake && \
 
 #Install PHP library
