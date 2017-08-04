@@ -19,7 +19,6 @@ RUN set -x && \
     openssh-clients \
     mc \
     wget \
-    epel-release \
     # PHP 7 
     php71u \
     php71u-cli \
@@ -163,7 +162,7 @@ RUN set -x && \
 RUN curl -sS https://getcomposer.org/installer | php && \
     chmod +x composer.phar && \
     mv composer.phar /usr/local/bin/composer && \
-    composer -V && \
+    composer -V 
     
 
 #Add supervisord conf
