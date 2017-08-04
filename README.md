@@ -2,7 +2,7 @@ Nginx and PHP for Docker
 
 ## Last Version
 nginx: **1.11.6**   
-php:   **7.1.0**
+php:   **7.1.3**
 
 ## Docker Hub   
 **Nginx-PHP7:** [https://hub.docker.com/r/skiychan/nginx-php7](https://hub.docker.com/r/skiychan/nginx-php7)   
@@ -72,11 +72,3 @@ extension=mongodb.so
 You can see the **[wiki](https://github.com/skiy-dockerfile/nginx-php7/wiki/Question-&-Answer)**
 
 ## [ChangeLog](changelogs.md)
-
-## Thanks
-[Legion](https://www.dwhd.org)  
-
-## Author
-Author: Skiychan    
-Email:  dev@skiy.net       
-Link:   https://www.skiy.net

@@ -1,7 +1,13 @@
 FROM centos:7
 
+# ENV http_proxy http://192.168.57.36:3128
+# ENV https_proxy http://192.168.57.36:3128
+
+# RUN export http_proxy=http://192.168.57.36:3128
+# RUN export https_proxy=http://192.168.57.36:3128
+
 ENV NGINX_VERSION 1.11.6
-ENV PHP_VERSION 7.1.0
+ENV PHP_VERSION 7.1.3
 
 RUN set -x && \
     yum install -y gcc \
