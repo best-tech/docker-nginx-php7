@@ -16,7 +16,7 @@ RUN set -x && \
     automake \
     libtool \
     make \
-    ssh \
+    openssh-clients \
     cmake && \
 
 #Install PHP library
