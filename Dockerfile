@@ -17,6 +17,7 @@ RUN set -x && \
     libtool \
     make \
     openssh-clients \
+    mc \
     cmake && \
 
 #Install PHP library
