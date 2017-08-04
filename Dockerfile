@@ -1,10 +1,10 @@
 FROM centos:7
 
-ENV http_proxy http://192.168.57.36:3128
-ENV https_proxy http://192.168.57.36:3128
+# ENV http_proxy http://192.168.57.36:3128
+# ENV https_proxy http://192.168.57.36:3128
 
-RUN export http_proxy=http://192.168.57.36:3128
-RUN export https_proxy=http://192.168.57.36:3128
+# RUN export http_proxy=http://192.168.57.36:3128
+# RUN export https_proxy=http://192.168.57.36:3128
 
 ENV NGINX_VERSION 1.11.6
 ENV PHP_VERSION 7.1.3
@@ -43,7 +43,7 @@ RUN set -x && \
 
 #Download nginx & php
     mkdir -p /home/nginx-php && cd $_ && \
-    curl -Lk --proxy http://192.168.57.36:3128 http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz | gunzip | tar x -C /home/nginx-php && \
+    curl -Lk http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz | gunzip | tar x -C /home/nginx-php && \
     curl -Lk http://php.net/distributions/php-$PHP_VERSION.tar.gz | gunzip | tar x -C /home/nginx-php && \
 
 #Make install nginx
