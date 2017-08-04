@@ -21,13 +21,29 @@ RUN set -x && \
     wget \
     epel-release \
     # PHP 7 
-    php71u php71u-cli php71u-fpm php71u-gd php71u-imap php71u-intl php71u-json php71u-ldap php71u-mbstring php71u-mcrypt php71u-mysqlnd php71u-pdo php71u-pear php71u-pgsql php71u-process php71u-pspell php71u-recode php71u-soap php71u-xml php71u-xmlrpc postfix \
+    php71u \
+    php71u-cli \
+    php71u-fpm \
+    php71u-gd \
+    php71u-imap \
+    php71u-intl \
+    php71u-json \
+    php71u-ldap \
+    php71u-mbstring \
+    php71u-mcrypt \
+    php71u-mysqlnd \
+    php71u-pdo \
+    php71u-pear \
+    php71u-pgsql \
+    php71u-process \
+    php71u-pspell \
+    php71u-recode \
+    php71u-soap \
+    php71u-xml \
+    php71u-xmlrpc \
+    postfix \
     cmake && \
-    curl -sS https://getcomposer.org/installer | php && \
-    chmod +x composer.phar && \
-    mv composer.phar /usr/local/bin/composer && \
-    composer -V && \
-    
+
 #Install PHP library
 ## libmcrypt-devel DIY
     rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm && \
@@ -144,11 +160,11 @@ RUN set -x && \
 #Change Mod from webdir
     chown -R www:www /data/www 
 
-# php 7 
-# RUN set -x && \
-# yum install -y php71w 
-# php70w-cli php70w-common php70w-bcmath php70w-dba php70w-devel php70w-embedded php70w-fpm php70w-gd php70w-imap php70w-interbase php70w-intl php70w-ldap php70w-mbstring php70w-mcrypt php70w-mysql php70w-odbc php70w-opcache php70w-pdo php70w-pdo_dblib php70w-pear php70w-process php70w-pspell php70w-recode php70w-tidy php70w-xml php70w-xmlrpc
-
+RUN curl -sS https://getcomposer.org/installer | php && \
+    chmod +x composer.phar && \
+    mv composer.phar /usr/local/bin/composer && \
+    composer -V && \
+    
 
 #Add supervisord conf
 ADD supervisord.conf /etc/
