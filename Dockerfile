@@ -19,28 +19,6 @@ RUN set -x && \
     openssh-clients \
     mc \
     wget \
-    # PHP 7 
-    php71u \
-    php71u-cli \
-    php71u-fpm \
-    php71u-gd \
-    php71u-imap \
-    php71u-intl \
-    php71u-json \
-    php71u-ldap \
-    php71u-mbstring \
-    php71u-mcrypt \
-    php71u-mysqlnd \
-    php71u-pdo \
-    php71u-pear \
-    php71u-pgsql \
-    php71u-process \
-    php71u-pspell \
-    php71u-recode \
-    php71u-soap \
-    php71u-xml \
-    php71u-xmlrpc \
-    postfix \
     cmake && \
 
 #Install PHP library
@@ -158,6 +136,11 @@ RUN set -x && \
 
 #Change Mod from webdir
     chown -R www:www /data/www 
+
+
+RUN set -x && \
+    yum install -y php71u-cli \ 
+    php71u-json 
 
 RUN curl -sS https://getcomposer.org/installer | php && \
     chmod +x composer.phar && \
