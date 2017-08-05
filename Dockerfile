@@ -135,23 +135,23 @@ RUN set -x && \
     rm -rf /home/nginx-php && \
 
 #Change Mod from webdir
-    chown -R www:www /data/www 
+    chown -R www:www /data/www && \
 
-
-RUN set -x && \
+    set -x && \
     yum install -y \
-    epel-release 
-    
-RUN wget https://centos7.iuscommunity.org/ius-release.rpm \
-    && rpm -i ./ius-release.rpm 
+    epel-release && \
+    wget https://centos7.iuscommunity.org/ius-release.rpm \
+    && rpm -i ./ius-release.rpm && \
 
-RUN set -x && \
+    #PHP CLI
+    set -x && \
     yum install -y \
     php71u \
     php71u-cli \ 
-    php71u-json 
+    php71u-json && \
 
-RUN curl -sS https://getcomposer.org/installer | php && \
+    #composer
+    curl -sS https://getcomposer.org/installer | php && \
     chmod +x composer.phar && \
     mv composer.phar /usr/local/bin/composer && \
     composer -V 
