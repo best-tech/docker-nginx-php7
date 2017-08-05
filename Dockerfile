@@ -18,6 +18,7 @@ RUN set -x && \
     make \
     openssh-clients \
     mc \
+    namo \
     wget \
     cmake && \
 
@@ -135,21 +136,20 @@ RUN set -x && \
     rm -rf /home/nginx-php && \
 
 #Change Mod from webdir
-    chown -R www:www /data/www && \
-
-    set -x && \
+    chown -R www:www /data/www 
+     #PHP CLI
+RUN set -x && \
     yum install -y \
-    epel-release && \
-    wget https://centos7.iuscommunity.org/ius-release.rpm \
-    && rpm -i ./ius-release.rpm && \
-
-    #PHP CLI
-    set -x && \
+    epel-release \
+    wget && \
+    rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm && \
     yum install -y \
-    php71u \
-    php71u-cli \ 
-    php71u-json && \
-
+    mod_php71w \
+    php71w-common \
+    php71w-fpm \
+    php71w-cli \
+    php71w-opcache && \
+                                        
     #composer
     curl -sS https://getcomposer.org/installer | php && \
     chmod +x composer.phar && \
